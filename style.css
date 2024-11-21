@@ -1,0 +1,102 @@
+/* Style général du corps de la page */
+body {
+    font-family: Helvetica, sans-serif;
+    background-color: #e6e6fa; /* Couleur mauve pastel */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column; /* Organise le contenu en colonne */
+    min-height: 100vh; /* Assure que le body prend au moins 100% de la hauteur de la fenêtre */
+    justify-content: space-between; /* Cela pousse le footer en bas de la page */
+    transform: scale(0.95); /* Réduit la taille de la page à 95% */
+    transform-origin: top left; /* Origine du zoom (en haut à gauche) */
+    padding-bottom: 50px; /* Ajoute un espace en bas de la page pour que le footer ne soit pas trop proche */
+}
+
+/* En-tête de la page : Bandeau de couleur mauve foncé */
+header {
+    background-color: #6a4c9c; /* Couleur mauve foncé */
+    padding: 20px 0;
+    text-align: center;
+}
+
+h1 {
+    color: #ffffff;
+    font-size: 36px;
+}
+
+/* Style des titres des dashboards */
+h2 {
+    color: #6a4c9c; /* Utilisation de la même couleur mauve foncé pour les titres */
+    font-size: 28px;
+    margin-top: 30px;
+}
+
+/* Style des paragraphes */
+p {
+    font-size: 18px;
+    text-align: left;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    background-color: #6a4c9c; /* Couleur mauve foncé pour le pied de page */
+    color: #ffffff;
+    padding: 10px;
+    margin-top: 20px; /* Espacement en haut du footer */
+}
+
+/* Taille des images des dashboards */
+.dashboard-thumbnail {
+    width: 100%; /* L'image prendra toute la largeur du conteneur flex */
+    height: auto; /* Conserve les proportions de l'image */
+    max-width: 400px; /* Limite la largeur de l'image à 400px */
+    display: block; /* Force l'image à se comporter comme un bloc pour centrer */
+    margin: 10px auto; /* Ajoute des marges autour de l'image pour l'espacement */
+}
+
+/* Flexbox pour organiser les dashboards sur une même ligne */
+.dashboards {
+    display: flex;
+    justify-content: space-between; /* Espace égal entre les éléments */
+    flex-wrap: wrap; /* Permet aux éléments de se réorganiser si l'espace est insuffisant */
+    gap: 20px; /* Ajoute de l'espace entre les éléments */
+    padding: 20px;
+}
+
+.dashboards > section {
+    flex: 1 1 45%; /* Chaque dashboard occupe 45% de la largeur, avec de l'espace pour l'autre */
+    text-align: center;
+}
+
+/* Media queries pour rendre la mise en page responsive */
+@media (max-width: 768px) {
+    .dashboard-thumbnail {
+        width: 80%; /* Réduit la largeur des images à 80% sur les petits écrans */
+        max-width: 300px; /* Limite la largeur des images à 300px */
+    }
+
+    .btn-dashboard {
+        width: 100%; /* Les boutons prennent toute la largeur sur mobile */
+        padding: 15px;
+    }
+
+    body {
+        font-size: 16px; /* Ajuste la taille de la police sur mobile */
+    }
+
+    .intro {
+        margin: 10px;
+        padding: 15px;
+    }
+
+    /* Sur les petits écrans, chaque dashboard occupe 100% de la largeur */
+    .dashboards > section {
+        flex: 1 1 100%;
+    }
+}
+
+
